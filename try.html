@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>African Fashion Connect - Discover Authentic African Fashion Designers & Shops</title>
+  <meta name="description" content="Connect with authentic African fashion designers and shops. Discover unique Ankara, Kente, and traditional African clothing. Shop from 500+ designers and stores across 25+ countries." />
+  <meta name="keywords" content="African fashion, Ankara clothing, Kente designs, African designers, traditional African wear, African fashion app, authentic African clothing, African fashion shops, African print, Afrocentric fashion" />
+  <meta name="author" content="African Fashion Connect" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="YOUR_CANONICAL_URL_HERE" /> <meta property="og:type" content="website" />
+  <meta property="og:url" content="YOUR_WEBSITE_URL_HERE" /> <meta property="og:title" content="African Fashion Connect - Authentic African Fashion" />
+  <meta property="og:description" content="Discover and shop authentic African fashion from 500+ designers and shops across Africa." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1200&q=80" /> <meta property="og:site_name" content="African Fashion Connect" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="YOUR_WEBSITE_URL_HERE" /> <meta property="twitter:title" content="African Fashion Connect - Authentic African Fashion" />
+  <meta property="twitter:description" content="Discover and shop authentic African fashion from 500+ designers and shops across Africa." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1200&q=80" /> <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//images.unsplash.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  </noscript>
+
+  <style>
+    /* ----------------------------------------
+        RESET & PERFORMANCE OPTIMIZATIONS
+    ---------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+      background-attachment: fixed;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Performance: Reduce repaints */
+    .gpu-accelerated {
+      transform: translateZ(0);
+      will-change: transform, opacity; /* Be specific about what will change */
+    }
+
+    /* Global Typography */
+    h1, h2, h3 {
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    p {
+      color: #e0e0e0;
+      font-weight: 400;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    img, video { /* Responsive media */
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Accessibility: Focus outline */
+    a:focus, button:focus, input:focus, [tabindex]:focus {
+        outline: 2px solid #00FFB2;
+        outline-offset: 2px;
+    }
+
+
+    /* ----------------------------------------
+        FLOATING NAVIGATION (MICRO-INTERACTION)
+    ---------------------------------------- */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.7); /* Slightly less opaque */
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.85); /* Darker on scroll */
+      transform: translateX(-50%) scale(0.98); /* Subtle scale */
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensure space for toggle */
+      width: 100%;
+      gap: 2rem;
+    }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: linear-gradient(45deg, #00FFB2, #00D99A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent; /* Standard property */
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.9rem;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(0, 255, 178, 0.1);
+      color: #00FFB2;
+      text-shadow: 0 0 10px rgba(0, 255, 178, 0.5);
+    }
+    .nav-toggle {
+      display: none; /* Hidden by default, shown in media query */
+      flex-direction: column;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0.5rem;
+    }
+    .nav-toggle span {
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      margin: 3px 0;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 1px;
+    }
+    /* Nav toggle animation - X shape */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
+    /* ----------------------------------------
+        SECTION BASE STYLES (ENHANCED GLASSMORPHIC)
+    ---------------------------------------- */
+    section {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 4rem auto; /* Increased top/bottom margin for separation */
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px) saturate(150%);
+      -webkit-backdrop-filter: blur(15px) saturate(150%);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      animation: fadeInUp 0.8s ease-out forwards; /* Ensure it stays at 'to' state */
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      overflow: hidden; /* Important for pseudo-elements and border radius */
+    }
+    section:first-of-type {
+        margin-top: 0; /* Hero section might not need top margin if it's full height */
+    }
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 178, 0.3), transparent);
+      animation: shimmer 4s infinite linear; /* Subtle shimmer for the border */
+    }
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        50% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ----------------------------------------
+        HERO SECTION (ENHANCED WITH APP MOCKUP SPACE)
+    ---------------------------------------- */
+    .hero {
+      margin-top: 0;
+      padding-top: clamp(8rem, 20vh, 12rem); /* Responsive padding */
+      padding-bottom: clamp(4rem, 10vh, 6rem);
+      background: transparent; /* Let body gradient show */
+      border: none;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: none;
+    }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Default for larger screens */
+      gap: 2rem; /* Reduced gap for flexibility */
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem; /* Ensure padding within hero content */
+    }
+    .hero-text {
+      text-align: left;
+      animation: slideInFromLeft 1s ease-out;
+    }
+
+    @keyframes slideInFromLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size */
+      background: linear-gradient(45deg, #00FFB2, #00D99A, #00C4CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+      animation: heroGlow 3s ease-in-out infinite alternate;
+      font-weight: 800;
+    }
+    @keyframes heroGlow {
+      0% { filter: drop-shadow(0 0 15px rgba(0, 255, 178, 0.2)); } /* Reduced intensity */
+      100% { filter: drop-shadow(0 0 30px rgba(0, 255, 178, 0.5)); }
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem); /* Responsive font size */
+      color: #c0c0c0; /* Slightly lighter for better contrast on dark bg */
+      margin-bottom: 3rem;
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 600px; /* Limit line length for readability */
+    }
+
+    /* APP MOCKUP CONTAINER (ENHANCED FOR YOUR SCREENSHOTS) */
+    .app-mockup-container {
+      position: relative;
+      perspective: 1500px;
+      height: clamp(450px, 70vh, 600px); /* Responsive height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: slideInFromRight 1s ease-out;
+    }
+      @keyframes slideInFromRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    .mockup-device {
+      position: relative;
+      width: clamp(240px, 30vw, 280px); /* Responsive width */
+      height: clamp(480px, 60vh, 560px); /* Responsive height */
+      background: linear-gradient(145deg, #1e1e1e, #121212); /* Slightly different gradient */
+      border-radius: 35px;
+      padding: 15px;
+      box-shadow: /* MODIFIED for Request 3 */
+        0 0 0 2px rgba(0, 255, 178, 0.25), 
+        0 0 80px 8px rgba(0, 255, 178, 0.22), /* Enhanced radiation */
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      animation: deviceFloat 8s ease-in-out infinite; /* Slower float */
+    }
+    @keyframes deviceFloat {
+      0%, 100% { transform: translateY(0px) rotateY(-2deg) rotateX(2deg); }
+      50% { transform: translateY(-15px) rotateY(3deg) rotateX(-3deg); }
+    }
+    .mockup-screen {
+      width: 100%;
+      height: 100%;
+      background: #050505; /* Very dark screen */
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+    }
+    .screen-content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      /* MODIFIED for Request 3 - added box-shadow to transition */
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.05); /* Start slightly zoomed for transition */
+      z-index: 1; /* Base z-index */
+    }
+    .screen-content.active {
+      opacity: 1;
+      transform: scale(1);
+      /* ADDED for Request 3 - Glow for active screen */
+      box-shadow: 0 0 25px rgba(0, 255, 178, 0.35), 0 0 50px rgba(0, 255, 178, 0.25);
+      z-index: 5; /* Active screen on top */
+    }
+    /* Placeholder screens - Replace with your app screenshots */
+    .screen-1 { background-image: url('https://images.unsplash.com/photo-1580654712603-eb4627ace149?auto=format&fit=crop&w=500&q=80'); } /* Replace */
+    .screen-2 { background-image: url('https://images.unsplash.com/photo-1529601007064-9f5559650214?auto=format&fit=crop&w=500&q=80'); } /* Replace */
+    .screen-3 { background-image: url('https://images.unsplash.com/photo-1610948237308-0775a3959739?auto=format&fit=crop&w=500&q=80'); } /* Replace */
+
+    .screenshot-placeholder {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 255, 178, 0.05);
+      backdrop-filter: blur(5px);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      border: 1px dashed rgba(0, 255, 178, 0.2);
+      font-size: 0.8rem;
+      color: #00FFB2;
+      text-align: center;
+      opacity: 0.8; 
+      z-index: 10; 
+      pointer-events: none; 
+    }
+
+    /* Store Buttons */
+    .store-buttons {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap; 
+      justify-content: flex-start; 
+    }
+    .store-button {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 12px; 
+      display: inline-flex; 
+      align-items: center;
+      padding: 0.8rem 1.5rem; 
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .store-button:hover {
+      background: rgba(0, 255, 178, 0.15);
+      border-color: #00FFB2;
+      transform: translateY(-5px) scale(1.03); 
+      box-shadow: 0 15px 35px rgba(0, 255, 178, 0.25); 
+      color: #00FFB2; 
+    }
+    .store-button i {
+      font-size: 1.5rem;
+      margin-right: 0.75rem;
+    }
+    /* Centered store buttons for sections (Request 1) */
+    .section-store-buttons {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem; /* Added some bottom margin */
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+
+    /* ----------------------------------------
+        FLOATING PARTICLES BACKGROUND (UNIQUE UX)
+    ---------------------------------------- */
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1; /* Ensure it's behind all content */
+      overflow: hidden;
+    }
+    .floating-element {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: linear-gradient(45deg, #00FFB2, #00D99A);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+      opacity: 0; 
+      box-shadow: 0 0 10px rgba(0, 255, 178, 0.5); 
+    }
+    @keyframes float { /* MODIFIED for Request 5 - more rotation */
+      0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+      10%, 90% {
+        opacity: 0.4; 
+        transform: scale(1) rotate(360deg); /* Added mid-rotation */
+      }
+      100% {
+        transform: translateY(-10vh) rotate(1080deg) scale(0.5); /* Increased end rotation */
+        opacity: 0;
+      }
+    }
+    /* Example variations if you have multiple static particle elements in HTML */
+    .floating-element:nth-child(2n) { animation-duration: 20s; opacity: 0.3; width: 8px; height: 8px; }
+    .floating-element:nth-child(3n) { animation-duration: 12s; opacity: 0.5; width: 5px; height: 5px; animation-delay: -5s; }
+
+
+    /* ----------------------------------------
+        STATS SECTION (ENHANCED WITH GLOW)
+    ---------------------------------------- */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem; /* Adjusted padding */
+      background: rgba(0, 255, 178, 0.02); /* Subtler background */
+      border: 1px solid rgba(0, 255, 178, 0.1);
+      position: relative;
+    }
+    .stats::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(0, 255, 178, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0.7; /* Control intensity of the radial glow */
+    }
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      border-radius: 15px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: default; 
+    }
+    .stat-item:hover {
+      background: rgba(0, 255, 178, 0.08); 
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 255, 178, 0.1);
+    }
+    .stat-number {
+      font-size: clamp(2.5rem, 5vw, 3rem); 
+      font-weight: 800;
+      color: #00FFB2;
+      display: block;
+      text-shadow: 0 0 20px rgba(0, 255, 178, 0.5);
+    }
+    .stat-label {
+      font-size: clamp(0.9rem, 2vw, 1rem); 
+      color: #b0b0b0;
+      margin-top: 0.5rem;
+    }
+
+    /* ----------------------------------------
+        SHARED CAROUSEL HEADING STYLE
+    ---------------------------------------- */
+    .carousel-section-heading { 
+      margin-bottom: 3.5rem; 
+      font-size: clamp(2.2rem, 5vw, 2.8rem); 
+      color: #00FFB2;
+      position: relative;
+      text-shadow: 0 0 30px rgba(0, 255, 178, 0.4);
+      padding-bottom: 1rem; 
+    }
+    .carousel-section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0; 
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #00FFB2, #00D99A); 
+      border-radius: 2px;
+      box-shadow: 0 0 20px rgba(0, 255, 178, 0.6);
+    }
+    
+    /* ----------------------------------------
+        STANDARD CAROUSEL (Latest Collections)
+    ---------------------------------------- */
+    .design-carousel { 
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 2rem;
+      padding: 3rem 1rem; 
+      margin: 0 -1rem; 
+      scroll-snap-type: x mandatory;
+      perspective: 1200px; 
+      transform-style: preserve-3d;
+      -webkit-overflow-scrolling: touch; 
+    }
+    .design-carousel::-webkit-scrollbar { height: 10px; }
+    .design-carousel::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.03); border-radius: 5px; }
+    .design-carousel::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #00FFB2, #00D99A); border-radius: 5px; box-shadow: 0 0 10px rgba(0, 255, 178, 0.5); }
+    .design-carousel::-webkit-scrollbar-thumb:hover { background: linear-gradient(90deg, #00e6a0, #00c488); }
+
+    .design-item {
+      position: relative;
+      flex: 0 0 clamp(280px, 30vw, 350px); 
+      height: clamp(400px, 45vw, 500px);   
+      border-radius: 25px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #1c1c1c, #101010); 
+      scroll-snap-align: center; 
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); 
+      transform-style: preserve-3d;
+      cursor: pointer;
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3), 
+        0 0 0 1px rgba(255, 255, 255, 0.08), 
+        0 0 20px rgba(0, 255, 178, 0.15); 
+      animation: cardFloat 8s ease-in-out infinite;
+      will-change: transform, box-shadow; 
+    }
+      @keyframes cardFloat { 
+      0%, 100% {
+        transform: translateY(0px) rotateY(0deg) rotateX(0deg);
+        box-shadow:
+          0 10px 25px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.08),
+          0 0 20px rgba(0, 255, 178, 0.15);
+      }
+      50% {
+        transform: translateY(-10px) rotateY(1deg) rotateX(1deg);
+        box-shadow:
+          0 18px 40px rgba(0, 0, 0, 0.35),
+          0 0 0 1px rgba(0, 255, 178, 0.15),
+          0 0 40px rgba(0, 255, 178, 0.25);
+      }
+    }
+    .design-item:hover, .design-item.is-active-slide {
+      transform: translateY(-15px) rotateY(3deg) rotateX(1deg) scale(1.03); 
+      z-index: 10; 
+      box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.5), 
+        0 0 0 2px rgba(0, 255, 178, 0.4), 
+        0 0 70px rgba(0, 255, 178, 0.5), 
+        inset 0 0 20px rgba(0, 255, 178, 0.05); 
+    }
+    .design-item:nth-child(even) { animation-delay: -2s; }
+    .design-item:nth-child(3n) { animation-delay: -4s; }
+    .design-item img {
+      width: 100%;
+      height: 70%; 
+      object-fit: cover;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: brightness(0.85) saturate(1.1); 
+      border-bottom: 1px solid rgba(0,255,178,0.1); 
+    }
+    .design-item:hover img {
+      transform: scale(1.05); 
+      filter: brightness(1) saturate(1.2); 
+    }
+    .design-info {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: #ffffff;
+      padding: 1.5rem; 
+      background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.85) 40%, 
+        rgba(0, 0, 0, 0.1) 100%);
+      text-align: left;
+      backdrop-filter: blur(8px) saturate(120%); 
+      border-top: 1px solid rgba(0,255,178,0.1);
+    }
+    .design-info h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.3rem; 
+      font-weight: 600;
+      background: linear-gradient(90deg, #ffffff, #00FFB2); 
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      line-height: 1.3;
+    }
+    .design-info p { margin: 0; font-size: 0.9rem; opacity: 0.8; color: #c0c0c0; line-height: 1.5; }
+    .design-price { color: #00FFB2; font-weight: 700; font-size: 1.1rem; margin-top: 0.75rem; text-shadow: 0 0 10px rgba(0, 255, 178, 0.5); }
+
+    /* ----------------------------------------
+        NEW INTERACTIVE CAROUSELS (Artisans, Fabrics)
+    ---------------------------------------- */
+    .interactive-carousel-section { 
+        /* background: rgba(255,255,255,0.03); */ /* Example: if different background desired */
+    }
+    .interactive-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 2.5rem; 
+        padding: 3rem 1.5rem; 
+        margin: 0 -1.5rem;
+        scroll-snap-type: x mandatory;
+        perspective: 1500px; 
+        transform-style: preserve-3d;
+        -webkit-overflow-scrolling: touch;
+    }
+    .interactive-carousel::-webkit-scrollbar { height: 12px; }
+    .interactive-carousel::-webkit-scrollbar-track { background: rgba(30, 30, 30, 0.5); border-radius: 6px; }
+    .interactive-carousel::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #00FFB2, #00D99A); border-radius: 6px; border: 2px solid rgba(30,30,30,0.5); }
+    .interactive-carousel::-webkit-scrollbar-thumb:hover { background: linear-gradient(45deg, #00e6a0, #00c488); }
+
+    .interactive-carousel-item {
+        position: relative;
+        flex: 0 0 clamp(300px, 25vw, 380px); 
+        height: clamp(420px, 30vw, 520px);
+        border-radius: 20px;
+        overflow: hidden;
+        background: #111; 
+        scroll-snap-align: center;
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); 
+        transform-style: preserve-3d;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        animation: subtleCardPulse 10s ease-in-out infinite alternate;
+        will-change: transform, box-shadow, z-index;
+        box-shadow: 
+            0 10px 30px rgba(0,0,0,0.4), 
+            0 0 5px rgba(0,255,178,0.1); 
+    }
+
+    @keyframes subtleCardPulse {
+        0% {
+            transform: scale(0.98) rotateY(1deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 5px rgba(0,255,178,0.1);
+        }
+        100% {
+            transform: scale(1.0) rotateY(-1deg);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.45), 0 0 10px rgba(0,255,178,0.2);
+        }
+    }
+    .interactive-carousel-item:nth-child(odd) {
+        animation-delay: -5s; 
+    }
+
+    .interactive-carousel-item:hover {
+        transform: translateY(-20px) scale(1.08) rotateY(0deg) rotateX(2deg); 
+        z-index: 100 !important; 
+        border-color: rgba(0,255,178,0.5);
+        box-shadow:
+            0 30px 60px rgba(0, 0, 0, 0.6),
+            0 0 12px 2px rgba(0, 255, 178, 0.8), 
+            0 0 25px 6px rgba(0, 255, 178, 0.5), 
+            0 0 50px 12px rgba(0, 255, 178, 0.3), 
+            0 0 100px 20px rgba(0, 255, 178, 0.15);
+    }
+
+    .interactive-carousel-item .item-image-container {
+        width: 100%;
+        height: 65%;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0,255,178,0.2);
+    }
+    .interactive-carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.6s ease;
+        filter: brightness(0.9) saturate(1.05);
+    }
+    .interactive-carousel-item:hover img {
+        transform: scale(1.1);
+        filter: brightness(1.05) saturate(1.2);
+    }
+    .interactive-item-info {
+        padding: 1.2rem;
+        text-align: left;
+        position: relative; 
+        background: linear-gradient(160deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.9) 100%);
+        height: 35%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .interactive-item-info h3 {
+        font-size: 1.25rem;
+        color: #00FFB2;
+        margin-bottom: 0.4rem;
+        font-weight: 700;
+        text-shadow: 0 0 8px rgba(0,255,178,0.3);
+    }
+    .interactive-item-info p {
+        font-size: 0.85rem;
+        color: #b0b0b0;
+        line-height: 1.5;
+        margin-bottom: 0.3rem; /* Adjusted from 0.8 to make space if CTA was there */
+    }
+    /* .item-cta class is now removed from HTML for artisans and fabrics sections (Request 1 & 2) */
+    /* Styles for .item-cta are kept here if you decide to bring them back elsewhere, but they are not currently used in those sections */
+    .item-cta { 
+        display: inline-block;
+        margin-top: 0.8rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #00FFB2;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid #00FFB2;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        text-align: center;
+        align-self: flex-start; 
+    }
+    .interactive-carousel-item:hover .item-cta { /* This will only apply if .item-cta is present */
+        background: #00FFB2;
+        color: #0a0a0a;
+        box-shadow: 0 0 15px rgba(0,255,178,0.4);
+    }
+
+
+    /* ----------------------------------------
+        FASHION DESIGN SHOPS SECTION
+    ---------------------------------------- */
+    .fashion-shops p.section-intro { 
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      color: #c0c0c0;
+      line-height: 1.8;
+    }
+    .shops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2.5rem; 
+      margin-top: 3rem;
+    }
+    .shop-card {
+      background: rgba(255, 255, 255, 0.025); 
+      backdrop-filter: blur(12px) saturate(140%);
+      border-radius: 20px; 
+      padding: 0; 
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+      display: flex;
+      flex-direction: column; 
+    }
+    .shop-card:hover {
+      transform: translateY(-10px) scale(1.02); 
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(0, 255, 178, 0.35);
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25), 
+        0 0 30px rgba(0, 255, 178, 0.15); 
+    }
+    .shop-image {
+      width: 100%;
+      height: 220px; 
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .shop-card:hover .shop-image {
+        transform: scale(1.05); 
+    }
+    .shop-overlay { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); 
+      opacity: 1; 
+      transition: opacity 0.3s ease;
+    }
+    .shop-content {
+      padding: 1.5rem; 
+      text-align: left;
+      flex-grow: 1; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+    }
+    .shop-name {
+      font-size: 1.25rem; 
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .shop-description {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem; 
+      flex-grow: 1; 
+    }
+    .shop-location, .shop-rating { 
+      font-size: 0.85rem;
+      color: #00FFB2;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .shop-location i, .shop-rating i {
+        font-size: 0.9rem;
+    }
+    .shop-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto; 
+    }
+
+
+    /* ----------------------------------------
+        COMMUNITY SECTION
+    ---------------------------------------- */
+    .community {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, rgba(0, 255, 178, 0.03), rgba(0, 217, 154, 0.01));
+      border: 1px solid rgba(0, 255, 178, 0.08);
+      position: relative;
+    }
+    /* Responsive adjustments for hero and nav */
+    @media (max-width: 992px) {
+        .hero-content {
+            grid-template-columns: 1fr; /* Stack hero content */
+            text-align: center;
+        }
+        .hero-text {
+            text-align: center;
+            order: 2; /* Text below mockup on small screens */
+        }
+        .app-mockup-container {
+            order: 1; /* Mockup above text */
+            margin-bottom: 3rem;
+            height: clamp(400px, 60vh, 500px); /* Adjust height for stacked layout */
+        }
+        .mockup-device {
+             width: clamp(220px, 40vw, 260px);
+             height: clamp(440px, 80vw, 520px); /* Adjust device proportions */
+        }
+        .store-buttons {
+            justify-content: center; /* Center buttons in hero text block when stacked */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 0.6rem 1.5rem;
+        }
+        .nav-links {
+            display: none; /* Hide links */
+            flex-direction: column;
+            position: absolute;
+            top: calc(100% + 10px); /* Position below navbar */
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 300px;
+            padding: 1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-links.active { /* This class would be toggled by JS */
+            display: flex;
+        }
+        .nav-toggle {
+            display: flex; /* Show toggle */
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3rem);
+        }
+        .hero p {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+        }
+        section {
+            padding: 4rem 1rem 3rem;
+            margin: 3rem auto;
+        }
+        .carousel-section-heading {
+            font-size: clamp(1.8rem, 6vw, 2.4rem);
+        }
+    }
+    /* Ensure footer styles also exist if the code continues */
+  </style>
+</head>
+<body>
+
+  <nav class="navbar gpu-accelerated">
+    <div class="nav-container">
+      <a href="#" class="logo">AFC</a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#featured-designs">Designs</a></li>
+        <li><a href="#artisans">Artisans</a></li>
+        <li><a href="#shops">Shops</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Connect to Africa's <br>Finest Fashion.</h1>
+        <p>
+          Discover authentic Ankara, Kente, and traditional African clothing.
+          Explore unique designs from 500+ top designers and boutiques across 25+ countries, right at your fingertips.
+        </p>
+        <div class="store-buttons">
+          <a href="#" class="store-button" aria-label="Download on the App Store">
+            <i class="fab fa-apple"></i>
+            <div>
+              <span>Download on the</span>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="#" class="store-button" aria-label="Get it on Google Play">
+            <i class="fab fa-google-play"></i>
+            <div>
+              <span>GET IT ON</span>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="app-mockup-container gpu-accelerated">
+        <div class="mockup-device">
+          <div class="mockup-screen">
+            <div class="screen-content screen-1 active"></div>
+            <div class="screen-content screen-2"></div>
+            <div class="screen-content screen-3"></div>
+            <div class="screenshot-placeholder">
+              Your App Screenshot Here <br> (e.g., 500x1000px)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="stats" class="stats">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Designers & Shops</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">25+</span>
+        <span class="stat-label">Countries Represented</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10K+</span>
+        <span class="stat-label">Unique Styles</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Access to Culture</span>
+      </div>
+    </section>
+
+    <section id="featured-designs" class="gpu-accelerated">
+      <h2 class="carousel-section-heading">Latest Collections</h2>
+      <div class="design-carousel">
+        <div class="design-item">
+          <img src="https://images.unsplash.com/photo-1604176354850-c345f8613208?auto=format&fit=crop&w=350&q=75" alt="Vibrant Ankara Print Dress">
+          <div class="design-info">
+            <h3>Ankara Radiance Gown</h3>
+            <p>Elegant gown perfect for any occasion.</p>
+            <div class="design-price">$120.00</div>
+          </div>
+        </div>
+        <div class="design-item">
+          <img src="https://images.unsplash.com/photo-1598508499697-6582f61df048?auto=format&fit=crop&w=350&q=75" alt="Men's Kente Pattern Shirt">
+          <div class="design-info">
+            <h3>Kente King Shirt</h3>
+            <p>Bold and traditional Kente pattern shirt.</p>
+            <div class="design-price">$85.00</div>
+          </div>
+        </div>
+        <div class="design-item">
+          <img src="https://images.unsplash.com/photo-1617183014098-a713a59600a9?auto=format&fit=crop&w=350&q=75" alt="Colorful Beaded Necklace">
+          <div class="design-info">
+            <h3>Maasai Spirit Necklace</h3>
+            <p>Handcrafted beaded necklace from Kenya.</p>
+            <div class="design-price">$45.00</div>
+          </div>
+        </div>
+        <div class="design-item">
+          <img src="https://images.unsplash.com/photo-1552374196-c4e72103607a?auto=format&fit=crop&w=350&q=75" alt="Modern Dashiki Top">
+          <div class="design-info">
+            <h3>Urban Dashiki Flow</h3>
+            <p>Contemporary take on the classic Dashiki.</p>
+            <div class="design-price">$60.00</div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="artisans" class="interactive-carousel-section gpu-accelerated">
+      <h2 class="carousel-section-heading">Meet Our Artisans</h2>
+      <div class="store-buttons section-store-buttons">
+          <a href="#" class="store-button" aria-label="Download on the App Store">
+              <i class="fab fa-apple"></i>
+              <div>
+                  <span>Download on the</span>
+                  <strong>App Store</strong>
+              </div>
+          </a>
+          <a href="#" class="store-button" aria-label="Get it on Google Play">
+              <i class="fab fa-google-play"></i>
+              <div>
+                  <span>GET IT ON</span>
+                  <strong>Google Play</strong>
+              </div>
+          </a>
+      </div>
+      <div class="interactive-carousel">
+        <div class="interactive-carousel-item">
+          <div class="item-image-container">
+            <img src="https://images.unsplash.com/photo-1541876063-599521847938?auto=format&fit=crop&w=380&q=75" alt="Artisan Adewale crafting jewelry">
+          </div>
+          <div class="interactive-item-info">
+            <h3>Adewale Adeoye</h3>
+            <p>Master Kente weaver from Ghana, with 20+ years of experience.</p>
+            </div>
+        </div>
+        <div class="interactive-carousel-item">
+          <div class="item-image-container">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=380&q=75" alt="Artisan Fatoumata designing clothes">
+          </div>
+          <div class="interactive-item-info">
+            <h3>Fatoumata Diallo</h3>
+            <p>Senegalese fashion designer blending modern styles with traditional fabrics.</p>
+            </div>
+        </div>
+        <div class="interactive-carousel-item">
+          <div class="item-image-container">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=380&q=75" alt="Artisan Themba showing textiles">
+          </div>
+          <div class="interactive-item-info">
+            <h3>Themba Khumalo</h3>
+            <p>South African textile artist known for vibrant Zulu beadwork.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="featured-fabrics" class="interactive-carousel-section gpu-accelerated">
+      <h2 class="carousel-section-heading">Discover Our Fabrics</h2>
+      <div class="interactive-carousel">
+        <div class="interactive-carousel-item">
+          <div class="item-image-container">
+            <img src="https://images.unsplash.com/photo-1609009487962-83703d85a70f?auto=format&fit=crop&w=380&q=75" alt="Kente cloth rolls">
+          </div>
+          <div class="interactive-item-info">
+            <h3>Royal Kente</h3>
+            <p>Symbolic patterns woven with rich history. Sourced from Ashanti region.</p>
+             </div>
+        </div>
+        <div class="interactive-carousel-item">
+          <div class="item-image-container">
+            <img src="https://images.unsplash.com/photo-1587897920054-d3a328053700?auto=format&fit=crop&w=380&q=75" alt="Ankara fabric selection">
+          </div>
+          <div class="interactive-item-info">
+            <h3>Vibrant Ankara</h3>
+            <p>Bold, colorful wax prints perfect for statement pieces. Wide selection.</p>
+            </div>
+        </div>
+        <div class="interactive-carousel-item">
+          <div class="item-image-container">
+            <img src="https://images.unsplash.com/photo-1618344970043-f0a497a2de4c?auto=format&fit=crop&w=380&q=75" alt="Mudcloth textile">
+          </div>
+          <div class="interactive-item-info">
+            <h3>Authentic Mudcloth</h3>
+            <p>Hand-dyed Bogolanfini from Mali, carrying stories in every design.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="shops" class="fashion-shops gpu-accelerated">
+      <h2 class="carousel-section-heading">Featured Fashion Shops</h2>
+      <p class="section-intro">
+        Explore curated boutiques and designer stores from across the continent. Find unique pieces and support local economies.
+      </p>
+      <div class="shops-grid">
+        <div class="shop-card">
+          <div class="shop-image" style="background-image: url('https://images.unsplash.com/photo-1553745942-097819b03048?auto=format&fit=crop&w=300&q=75');">
+            <div class="shop-overlay"></div>
+          </div>
+          <div class="shop-content">
+            <div>
+              <h3 class="shop-name">Accra Style Hub</h3>
+              <p class="shop-description">Contemporary Ghanaian fashion with a global appeal. Accessories and ready-to-wear.</p>
+            </div>
+            <div class="shop-meta">
+              <span class="shop-location"><i class="fas fa-map-marker-alt"></i> Accra, Ghana</span>
+              <span class="shop-rating"><i class="fas fa-star"></i> 4.8 (120)</span>
+            </div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-image" style="background-image: url('https://images.unsplash.com/photo-1525469158598-66526b16ea5a?auto=format&fit=crop&w=300&q=75');">
+            <div class="shop-overlay"></div>
+          </div>
+          <div class="shop-content">
+            <div>
+              <h3 class="shop-name">Lagos Threads Boutique</h3>
+              <p class="shop-description">Exclusive Ankara prints and bespoke tailoring services. Based in vibrant Lagos.</p>
+            </div>
+            <div class="shop-meta">
+              <span class="shop-location"><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</span>
+              <span class="shop-rating"><i class="fas fa-star"></i> 4.9 (250)</span>
+            </div>
+          </div>
+        </div>
+        <div class="shop-card">
+          <div class="shop-image" style="background-image: url('https://images.unsplash.com/photo-1604006275095-a93895f79006?auto=format&fit=crop&w=300&q=75');">
+            <div class="shop-overlay"></div>
+          </div>
+          <div class="shop-content">
+            <div>
+              <h3 class="shop-name">Cape Town Creations</h3>
+              <p class="shop-description">Ethically sourced materials meet modern South African design. Unique jewelry & apparel.</p>
+            </div>
+            <div class="shop-meta">
+              <span class="shop-location"><i class="fas fa-map-marker-alt"></i> Cape Town, SA</span>
+              <span class="shop-rating"><i class="fas fa-star"></i> 4.7 (95)</span>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="community" class="community gpu-accelerated">
+        <h2 class="carousel-section-heading">Join Our Community</h2>
+        <p style="max-width: 700px; margin: -1rem auto 2.5rem; color: #c0c0c0; font-size: 1.1rem;">
+            Connect with fashion enthusiasts, designers, and artisans. Share your style, discover trends, and be part of the movement that celebrates African fashion globally. Download the app to engage!
+        </p>
+         <div class="store-buttons section-store-buttons">
+          <a href="#" class="store-button" aria-label="Download on the App Store">
+            <i class="fab fa-apple"></i>
+            <div>
+              <span>Download on the</span>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="#" class="store-button" aria-label="Get it on Google Play">
+            <i class="fab fa-google-play"></i>
+            <div>
+              <span>GET IT ON</span>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+        </section>
+
+  </main>
+
+  <footer style="text-align: center; padding: 3rem 1rem; background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #a0a0a0;">&copy; <span id="currentYear"></span> African Fashion Connect. All Rights Reserved.</p>
+    <p style="font-size: 0.8rem; color: #707070;">
+      <a href="#" style="color: #909090; margin: 0 0.5rem;">Privacy Policy</a> |
+      <a href="#" style="color: #909090; margin: 0 0.5rem;">Terms of Service</a>
+    </p>
+  </footer>
+
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        try {
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        } catch (error) {
+          console.warn('Smooth scroll target not found:', this.getAttribute('href'));
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Nav Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            navToggle.setAttribute('aria-expanded', isExpanded);
+            navToggle.classList.toggle('active', isExpanded); // For X animation
+        });
+    }
+
+
+    // App Mockup Screen Slider
+    const screens = document.querySelectorAll('.screen-content');
+    let currentScreenIndex = 0;
+    function showNextScreen() {
+      if (screens.length === 0) return;
+      screens[currentScreenIndex].classList.remove('active');
+      currentScreenIndex = (currentScreenIndex + 1) % screens.length;
+      screens[currentScreenIndex].classList.add('active');
+    }
+    if (screens.length > 0) {
+        setInterval(showNextScreen, 4000); // Change screen every 4 seconds
+    }
+
+
+    // Dynamic year for footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Active nav link highlighting (basic example, can be improved with Intersection Observer)
+    const sections = document.querySelectorAll('section[id]');
+    const navListItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+        
+        // Special case for hero being at the very top
+        if (pageYOffset < sections[0].offsetTop - 100 ) {
+             currentSectionId = 'hero';
+        }
+
+
+        navListItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+  </script>
+</body>
+</html>
