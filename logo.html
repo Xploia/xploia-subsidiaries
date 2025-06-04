@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conjoined Rings - Download & Share</title>
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+      color: #e0e0e0;
+      gap: 15px;
+      padding: 20px;
+    }
+    .glass-logo {
+      width: 260px;
+      height: 260px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      user-select: none;
+    }
+    svg {
+      width: 200px;
+      height: 200px;
+    }
+    button {
+      padding: 10px 18px;
+      background: #00ffb2;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 5px;
+    }
+    button:hover {
+      background: #00c896;
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glass-logo" id="logoContainer">
+    <svg id="logoSVG" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" >
+      <defs>
+        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00FFB2">
+            <animate attributeName="stop-color" values="#00FFB2;#00C896;#00FFB2" dur="6s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stop-color="#00C896">
+            <animate attributeName="stop-color" values="#00C896;#00FFB2;#00C896" dur="6s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00FFB2">
+            <animate attributeName="stop-color" values="#00FFB2;#00A070;#00FFB2" dur="6s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stop-color="#00A070">
+            <animate attributeName="stop-color" values="#00A070;#00FFB2;#00A070" dur="6s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+      </defs>
+
+      <circle cx="55" cy="100" r="45" stroke="url(#gradient1)" stroke-width="20" fill="none" />
+      <circle cx="145" cy="100" r="45" stroke="url(#gradient2)" stroke-width="20" fill="none" />
+    </svg>
+  </div>
+
+  <div class="button-row">
+    <button id="downloadPNGBtn">Download PNG (transparent bg)</button>
+    <button id="downloadWithBgBtn">Download PNG with Background</button>
+    <button id="downloadVideoBtn">Download 5s Video (WebM)</button>
+    <button id="copyEmbedBtn">Copy Embed Code</button>
+    <button id="shareLinkBtn">Share Link</button>
+    <button id="copyUrlBtn">Copy Page URL</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const logoContainer = document.getElementById('logoContainer');
+    const svg = document.getElementById('logoSVG');
+
+    // Download PNG with transparent background
+    document.getElementById('downloadPNGBtn').onclick = () => {
+      html2canvas(logoContainer, {backgroundColor: null}).then(canvas => {
+        canvas.toBlob(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'conjoined-rings.png';
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      });
+    };
+
+    // Download PNG with black background
+    document.getElementById('downloadWithBgBtn').onclick = () => {
+      html2canvas(logoContainer, {backgroundColor: '#000'}).then(canvas => {
+        canvas.toBlob(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'conjoined-rings-bg.png';
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      });
+    };
+
+    // Download 5 seconds video recording of the SVG animation as WebM
+    document.getElementById('downloadVideoBtn').onclick = async () => {
+      try {
+        // Use SVG outerHTML as canvas drawing source
+        const xml = new XMLSerializer().serializeToString(svg);
+        const svg64 = btoa(unescape(encodeURIComponent(xml)));
+        const image64 = 'data:image/svg+xml;base64,' + svg64;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = 200;
+        canvas.height = 200;
+        const ctx = canvas.getContext('2d');
+
+        const videoStream = canvas.captureStream(30); // 30 fps
+        const mediaRecorder = new MediaRecorder(videoStream, { mimeType: 'video/webm' });
+
+        let chunks = [];
+        mediaRecorder.ondataavailable = e => {
+          if (e.data.size > 0) chunks.push(e.data);
+        };
+
+        mediaRecorder.start();
+
+        const img = new Image();
+        img.src = image64;
+
+        // To animate gradient color changes, we need to re-render SVG frames
+        // We will do a basic 30fps loop for 5 seconds, manually updating SVG colors per frame
+
+        // Helper: compute intermediate stop-color between two hex colors
+        function lerpColor(a, b, t) {
+          const ah = parseInt(a.slice(1), 16),
+            ar = ah >> 16, ag = (ah >> 8) & 0xff, ab = ah & 0xff,
+            bh = parseInt(b.slice(1), 16),
+            br = bh >> 16, bg = (bh >> 8) & 0xff, bb = bh & 0xff;
+          const rr = Math.round(ar + (br - ar) * t);
+          const rg = Math.round(ag + (bg - ag) * t);
+          const rb = Math.round(ab + (bb - ab) * t);
+          return `rgb(${rr},${rg},${rb})`;
+        }
+
+        // Gradients colors used in animation cycles
+        const grad1Stops = ['#00FFB2', '#00C896', '#00FFB2'];
+        const grad2Stops = ['#00FFB2', '#00A070', '#00FFB2'];
+
+        // Function to draw current frame on canvas
+        function drawFrame(progress) {
+          // progress: 0 to 1 over 6 seconds cycle
+
+          // Calculate stop colors for gradient1
+          const p = progress * (grad1Stops.length - 1);
+          const i = Math.floor(p);
+          const t = p - i;
+
+          const grad1Start = lerpColor(grad1Stops[i], grad1Stops[(i + 1) % grad1Stops.length], t);
+          const grad1End = lerpColor(grad1Stops[(i + 1) % grad1Stops.length], grad1Stops[(i + 2) % grad1Stops.length], t);
+
+          const grad2Start = lerpColor(grad2Stops[i], grad2Stops[(i + 1) % grad2Stops.length], t);
+          const grad2End = lerpColor(grad2Stops[(i + 1) % grad2Stops.length], grad2Stops[(i + 2) % grad2Stops.length], t);
+
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#000';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // Draw rings with linear gradients
+          const gradient1 = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+          gradient1.addColorStop(0, grad1Start);
+          gradient1.addColorStop(1, grad1End);
+
+          const gradient2 = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+          gradient2.addColorStop(0, grad2Start);
+          gradient2.addColorStop(1, grad2End);
+
+          ctx.lineWidth = 20;
+          ctx.lineCap = 'round';
+          ctx.fillStyle = 'none';
+
+          // Left ring
+          ctx.strokeStyle = gradient1;
+          ctx.beginPath();
+          ctx.arc(55, 100, 45, 0, 2 * Math.PI);
+          ctx.stroke();
+
+          // Right ring
+          ctx.strokeStyle = gradient2;
+          ctx.beginPath();
+          ctx.arc(145, 100, 45, 0, 2 * Math.PI);
+          ctx.stroke();
+        }
+
+        const duration = 5000; // 5 seconds
+        const fps = 30;
+        const frameCount = duration / 1000 * fps;
+
+        let frame = 0;
+
+        function renderFrame() {
+          const progress = ((frame / fps) % 6) / 6; // loop over 6s gradient animation
+          drawFrame(progress);
+          frame++;
+          if (frame <= frameCount) {
+            requestAnimationFrame(renderFrame);
+          } else {
+            mediaRecorder.stop();
+          }
+        }
+
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(chunks, { type: 'video/webm' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'conjoined-rings-animation.webm';
+          a.click();
+          URL.revokeObjectURL(url);
+        };
+
+        renderFrame();
+
+      } catch (error) {
+        alert('Sorry, video recording is not supported in this browser.');
+        console.error(error);
+      }
+    };
+
+    // Copy embed code (SVG snippet)
+    document.getElementById('copyEmbedBtn').onclick = () => {
+      const embedCode = `
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:200px; height:200px;">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFB2">
+        <animate attributeName="stop-color" values="#00FFB2;#00C896;#00FFB2" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#00C896">
+        <animate attributeName="stop-color" values="#00C896;#00FFB2;#00C896" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFB2">
+        <animate attributeName="stop-color" values="#00FFB2;#00A070;#00FFB2" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#00A070">
+        <animate attributeName="stop-color" values="#00A070;#00FFB2;#00A070" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+  </defs>
+  <circle cx="55" cy="100" r="45" stroke="url(#gradient1)" stroke-width="20" fill="none" />
+  <circle cx="145" cy="100" r="45" stroke="url(#gradient2)" stroke-width="20" fill="none" />
+</svg>`;
+      navigator.clipboard.writeText(embedCode.trim()).then(() => {
+        alert('Embed code copied to clipboard!');
+      });
+    };
+
+    // Share page link (native share API or fallback copy)
+    document.getElementById('shareLinkBtn').onclick = async () => {
+      const url = window.location.href;
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: 'Check out this cool conjoined rings logo!',
+            url,
+          });
+        } catch (err) {
+          alert('Share canceled or failed.');
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(url);
+          alert('Page URL copied to clipboard!');
+        } catch {
+          alert('Share and clipboard not supported.');
+        }
+      }
+    };
+
+    // Copy current page URL to clipboard
+    document.getElementById('copyUrlBtn').onclick = () => {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Page URL copied to clipboard!');
+      });
+    };
+  </script>
+</body>
+</html>
